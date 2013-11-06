@@ -9,6 +9,7 @@
 <?php
 $geld=0;
 $geldpc=0.25;
+$euro= "&#8364";
 
 $flaschenanzahl=0;
 $flaschenpreis=1.5;
@@ -101,12 +102,7 @@ $zeitmaschinenpreis=100000;
 	
 	
 	
-	
-	
-
-
-	
-//COOKIE KLICKER
+//GELD KLICKER
 if (isset($_REQUEST['geld_y'])){
 
 	$geld_y=$_REQUEST['geld_y'];
@@ -114,7 +110,7 @@ if (isset($_REQUEST['geld_y'])){
 	
 	if ($geld_y>0){
 		//Anzahl pro Klick berechen
-		$geldpc = 0.25+($omaanzahl*1)+($fabrikanzahl*10);	
+		$geldpc = $geldpc+($omaanzahl*1)+($fabrikanzahl*10);	
 		//addieren
 		$geld = $geld+$geldpc;
 		setcookie("geldmenge", $geld, time()+3600);
@@ -140,8 +136,6 @@ if (isset($_REQUEST['oma_y'])){
 		setcookie("omapreis", $omapreis, time()+3600);
 	}
 }
-	//Anzahl pro Klick berechen
-	$geldpc = 0.25+($omaanzahl*1)+($fabrikanzahl*10);
 }
 
 //FABRIK KAUFEN
@@ -162,9 +156,11 @@ if (isset($_REQUEST['fabrik_y'])){
 		setcookie("fabrikpreis", $fabrikpreis, time()+3600);
 	}
 }
-	//Anzahl pro Klick berechen
-	$geldpc = 0.25+($omaanzahl*1)+($fabrikanzahl*10);	
 }
+
+
+
+
 
 	//RESET
 if (isset($_REQUEST['reset'])){
@@ -180,7 +176,6 @@ if (isset($_REQUEST['reset'])){
 //HTML
 $omapc=$omaanzahl*1;
 $fabrikpc=$fabrikanzahl*10;
-$euro= "&#8364";
 echo "
 
 <form method='Post'>
