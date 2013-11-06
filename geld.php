@@ -3,13 +3,14 @@
 	<title>Leibniz Klicker</title>
 </head>
 <body>
+
 <center>
 
 <?php
 
 echo "<form method='Post'>
 
-	<input type='image' src='images/geld.jpg' name='geld' ><br>
+	<input type='image' src='images/geld.png' width='200' length='200' name='geld' ><br>
 		
 	</form>";
 
@@ -56,7 +57,7 @@ if (isset($_REQUEST['geld_y'])){
 	
 	if ($geld_y>0){
 		//Anzahl pro Klick berechen
-		$geldpc = 1+($omaanzahl*1)+($fabrikanzahl*25);	
+		$geldpc = 0.25+($omaanzahl*1)+($fabrikanzahl*10);	
 		//addieren
 		$geld = $geld+$geldpc;
 		setcookie("geldmenge", $geld, time()+3600);
@@ -83,7 +84,7 @@ if (isset($_REQUEST['oma_y'])){
 	}
 }
 	//Anzahl pro Klick berechen
-	$geldpc = 1+($omaanzahl*1)+($fabrikanzahl*25);
+	$geldpc = 0.25+($omaanzahl*1)+($fabrikanzahl*10);
 }
 
 //FABRIK KAUFEN
@@ -105,7 +106,7 @@ if (isset($_REQUEST['fabrik_y'])){
 	}
 }
 	//Anzahl pro Klick berechen
-	$geldpc = 1+($omaanzahl*1)+($fabrikanzahl*25);	
+	$geldpc = 0.25+($omaanzahl*1)+($fabrikanzahl*10);	
 }
 
 	//Ausgabe
@@ -114,7 +115,7 @@ if (isset($_REQUEST['fabrik_y'])){
 	echo "$omaanzahl Omas.(+" .($omaanzahl*1) . ")<br>";
 	echo "$omapreis Euro pro weitere Oma.<br><br>";
 	
-	echo "$fabrikanzahl Fabriken.(+" .($fabrikanzahl*25) . ")<br>";
+	echo "$fabrikanzahl Fabriken.(+" .($fabrikanzahl*10) . ")<br>";
 	echo "$fabrikpreis Euro pro weitere Fabrik.<br><br>";
 	
 	//RESET
