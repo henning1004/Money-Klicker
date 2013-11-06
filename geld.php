@@ -7,22 +7,44 @@
 <center>
 
 <?php
-
-
 $geld=0;
 $geldpc=0.25;
 
+$flaschenanzahl=0;
+$flaschenpreis=1.5;
+
 $omaanzahl=0;
-$omapreis=50;
+$omapreis=200;
 
 $fabrikanzahl=0;
 $fabrikpreis=2500;
+
+$bankanzahl=0;
+$bankpreis=10000;
+
+$druckeranzahl=0;
+$druckerpreis=25000;
+
+$zeitmaschinenanzahl=0;
+$zeitmaschinenpreis=100000;
 
 	//abfrage geldmenge
 	if(isset($_COOKIE["geldmenge"])){
 		$geld = $_COOKIE["geldmenge"];
 	}
+
+//FLASCHE
+	//abfrage flaschenanzahl
+	if(isset($_COOKIE["flaschenanzahl"])){
+		$flaschenanzahl = $_COOKIE["flaschenanzahl"];
+	}
 	
+	//abfrage flaschenpreis
+	if(isset($_COOKIE["flaschenpreis"])){
+		$flaschenpreis = $_COOKIE["flaschenpreis"];
+	}
+
+//OMA
 	//abfrage omaanzahl
 	if(isset($_COOKIE["omaanzahl"])){
 		$omaanzahl = $_COOKIE["omaanzahl"];
@@ -32,7 +54,8 @@ $fabrikpreis=2500;
 	if(isset($_COOKIE["omapreis"])){
 		$omapreis = $_COOKIE["omapreis"];
 	}
-	
+
+//FABRIK
 	//abfrage fabrikanzahl
 	if(isset($_COOKIE["fabrikanzahl"])){
 		$fabrikanzahl = $_COOKIE["fabrikanzahl"];
@@ -43,6 +66,45 @@ $fabrikpreis=2500;
 		$fabrikpreis = $_COOKIE["fabrikpreis"];
 	}
 	
+//BANK
+	//abfrage bankanzahl
+	if(isset($_COOKIE["bankanzahl"])){
+		$bankanzahl = $_COOKIE["bankanzahl"];
+	}
+	
+	//abfrage bankpreis
+	if(isset($_COOKIE["bankpreis"])){
+		$bankpreis = $_COOKIE["bankpreis"];
+	}
+	
+//DRUCKER
+	//abfrage druckeranzahl
+	if(isset($_COOKIE["druckeranzahl"])){
+		$druckeranzahl = $_COOKIE["druckeranzahl"];
+	}
+	
+	//abfrage druckerpreis
+	if(isset($_COOKIE["druckerpreis"])){
+		$druckerpreis = $_COOKIE["druckerpreis"];
+	}
+	
+//ZEITMASCHINE
+	//abfrage zeitmaschinenanzahl
+	if(isset($_COOKIE["zeitmaschinenanzahl"])){
+		$zeitmaschinenanzahl = $_COOKIE["zeitmaschinenanzahl"];
+	}
+	
+	//abfrage zeitmaschinenpreis
+	if(isset($_COOKIE["zeitmaschinenpreis"])){
+		$zeitmaschinenpreis = $_COOKIE["zeitmaschinenpreis"];
+	}
+	
+	
+	
+	
+	
+
+
 	
 //COOKIE KLICKER
 if (isset($_REQUEST['geld_y'])){
