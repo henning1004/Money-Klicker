@@ -129,13 +129,35 @@ if (isset($_REQUEST['reset'])){
 	echo "<meta http-equiv='refresh' content='0; URL=geld.php'>";
 }
 
-echo "<form method='Post'>
-	
-	<input type='image' src='images/oma.png' name='oma'  width='100' lenght='90' value='Oma kaufen'><br>
-	<input type='image' src='images/fabrik.jpg' width='100' lenght='90' name='fabrik' value='Fabrik kaufen'><br> 
+echo "
+
+<form method='Post'>
+
+<TABLE border='0' style='hidden'>
+  <TR>
+    <TD><input type='image' src='images/oma.png' name='oma'  width='100' lenght='90' value='Oma kaufen'><br></TD>
+    <TD><input type='image' src='images/fabrik.jpg' width='100' lenght='90' name='fabrik' value='Fabrik kaufen'><br> </TD>
+
+    <TD><input type='image' src='images/fabrik.jpg' width='100' lenght='90' name='fabrik' value='Fabrik kaufen'><br> </TD>
+	<TD><input type='image' src='images/fabrik.jpg' width='100' lenght='90' name='fabrik' value='Fabrik kaufen'><br> </TD>
+	<TD><input type='image' src='images/fabrik.jpg' width='100' lenght='90' name='fabrik' value='Fabrik kaufen'><br> </TD>
+	<TD><input type='image' src='images/fabrik.jpg' width='100' lenght='90' name='fabrik' value='Fabrik kaufen'><br> </TD>
+  </TR>
+  <TR>
+    <TD>".$omaanzahl." Omas</TD>
+    <TD>".$fabrikanzahl." Fabrike</TD>
+
+	<TD>".$fabrikanzahl." Fabrike</TD>
+	<TD>".$fabrikanzahl." Fabrike</TD>
+	<TD>".$fabrikanzahl." Fabrike</TD>
+	<TD>".$fabrikanzahl." Fabrike</TD>
+  </TR>
+
+</TABLE>
+
 	<input type='submit' name='reset' value='reset'><br>
 	
-	</form></center>";
+</form></center>";
 	
 ?>
 
