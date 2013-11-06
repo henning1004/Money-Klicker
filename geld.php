@@ -104,7 +104,6 @@ if (isset($_REQUEST['fabrik_y'])){
 	$geldpc = 0.25+($omaanzahl*1)+($fabrikanzahl*10);	
 }
 
-
 	//RESET
 if (isset($_REQUEST['reset'])){
 	setcookie("geldmenge", 0, time()+3600);
@@ -127,31 +126,31 @@ echo "
 <TABLE border='0'>
   <TR>
 	<TD><input type='image' src='images/reset.jpg' width='75' length='75' name='reset' value='reset'>				 </TD>
-    <TD><input type='image' src='images/oma.png' name='oma'  width='100' lenght='90' value='Oma kaufen'><br>		 </TD>
-    <TD><input type='image' src='images/fabrik.jpg' width='100' lenght='90' name='fabrik' value='Fabrik kaufen'><br> </TD>
-
-    <TD><input type='image' src='images/fabrik.jpg' width='100' lenght='90' name='fabrik' value='Fabrik kaufen'><br> </TD>
-	<TD><input type='image' src='images/fabrik.jpg' width='100' lenght='90' name='fabrik' value='Fabrik kaufen'><br> </TD>
-	<TD><input type='image' src='images/fabrik.jpg' width='100' lenght='90' name='fabrik' value='Fabrik kaufen'><br> </TD>
-	<TD><input type='image' src='images/fabrik.jpg' width='100' lenght='90' name='fabrik' value='Fabrik kaufen'><br> </TD>
+	
+	<TD><input type='image' src='images/flasche.png' 		name='flasche'>	<br> </TD>
+    <TD><input type='image' src='images/oma.png'	 		name='oma'>		<br> </TD>
+    <TD><input type='image' src='images/fabrik.png'  		name='fabrik'>	<br> </TD>
+	<TD><input type='image' src='images/bank.png'  	 		name='bank'>	<br> </TD>
+	<TD><input type='image' src='images/drucker.png' 		name='drucker'>	<br> </TD>
+	<TD><input type='image' src='images/zeitmaschine.png' 	name='zeitmaschine'>	<br> </TD>
   </TR>
   <TR>
 	<TD></TD>
-    <TD>".$omaanzahl.	"Omas 	   (+".$omapc.")     </TD>
-    <TD>".$fabrikanzahl." Fabriken (+".$fabrikpc.")  </TD>
-	<TD>".$fabrikanzahl." Fabriken (+".$fabrikpc.")  </TD>
-	<TD>".$fabrikanzahl." Fabriken (+".$fabrikpc.")  </TD>
-	<TD>".$fabrikanzahl." Fabriken (+".$fabrikpc.")  </TD>
-	<TD>".$fabrikanzahl." Fabriken (+".$fabrikpc.")  </TD>
+    <TD>".$flaschenanzahl.		" Flaschen 		(+".$flaschenpc.")  </TD>
+	<TD>".$omaanzahl.			" Omas 	   		(+".$omapc.")     </TD>
+	<TD>".$fabrikanzahl. 		" Fabriken		(+".$fabrikpc.")  </TD>
+	<TD>".$bankanzahl.    		" Banken 		(+".$bankpc.")  </TD>
+	<TD>".$druckeranzahl. 		" Drucker 		(+".$druckerpc.")  </TD>
+	<TD>".$zeitmaschinenanzahl. " Zeitmaschinen (+".$zeitmaschinenpc.")  </TD>
   </TR>
    <TR>
 	<TD><b>Preis pro Einheit: </b></TD>
-    <TD>".$omapreis." $euro</TD>
+    <TD>".$flaschenpreis." $euro </TD>
+	<TD>".$omapreis." $euro</TD>
     <TD>".$fabrikpreis." $euro </TD>
-    <TD>".$fabrikpreis." $euro </TD>
-    <TD>".$fabrikpreis." $euro</TD>
-    <TD>".$fabrikpreis." $euro </TD>
-    <TD>".$fabrikpreis." $euro </TD>
+    <TD>".$bankpreis." $euro</TD>
+    <TD>".$druckerpreis." $euro </TD>
+    <TD>".$zeitmaschinenpreis." $euro </TD>
   </TR>
 
 </TABLE>
@@ -165,13 +164,8 @@ echo "<form method='Post'>
 	</form>";
 
 //Ausgabe
-	echo "$geld Euro. ($geldpc Euro pro Klick)<br><br>"; 
+	echo "<b><FONT FACE='Arial Black'>$geld $euro ($geldpc $euro pro Klick)</FÒNT></b><br><br></center>"; 
 	
-	echo "$omaanzahl Omas.(+" .($omaanzahl*1) . ")<br>";
-	echo "$omapreis Euro pro weitere Oma.<br><br>";
-	
-	echo "$fabrikanzahl Fabriken.(+" .($fabrikanzahl*10) . ")<br>";
-	echo "$fabrikpreis Euro pro weitere Fabrik.<br><br></center>";
 	
 	
 ?>
