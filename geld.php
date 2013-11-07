@@ -8,21 +8,21 @@
 
 <?php
 $geld=0;
-$geldpc=0.50;
 $euro= "&#8364";
+$leer="&nbsp;";
 $steigungsfaktor=1.2; //20% pro kauf geht hoch- ändern geht global !
 
 $flaschenanzahl=0;
-$flaschenpreis=5;
+$flaschenpreis=2;
 
 $omaanzahl=0;
-$omapreis=500;
+$omapreis=250;
 
 $fabrikanzahl=0;
-$fabrikpreis=5000;
+$fabrikpreis=1000;
 
 $bankanzahl=0;
-$bankpreis=12500;
+$bankpreis=7500;
 
 $druckeranzahl=0;
 $druckerpreis=25000;
@@ -101,12 +101,13 @@ $zeitmaschinenpreis=500000;
 		$zeitmaschinenpreis = $_COOKIE["zeitmaschinenpreis"];
 	}
 	
-$flaschenpc=$flaschenanzahl*0.25;
-$omapc=$omaanzahl*1;
+$flaschenpc=$flaschenanzahl*0.05;
+$omapc=$omaanzahl*3;
 $fabrikpc=$fabrikanzahl*10;
 $bankpc=$bankanzahl*25;
 $druckerpc=$druckeranzahl*50;
 $zeitmaschinenpc=$zeitmaschinenanzahl*100;
+	
 	
 //GELD KLICKER
 if (isset($_REQUEST['geld_y'])){
@@ -116,7 +117,7 @@ if (isset($_REQUEST['geld_y'])){
 	
 	if ($geld_y>0){
 		//Anzahl pro Klick berechen
-		$geldpc = $geldpc+$flaschenpc+$omapc+$fabrikpc+$bankpc+$druckerpc+$zeitmaschinenpc;
+		$geldpc = 0.01+$flaschenpc+$omapc+$fabrikpc+$bankpc+$druckerpc+$zeitmaschinenpc;
 								
 		//addieren
 		$geld = $geld+$geldpc;
@@ -125,6 +126,54 @@ if (isset($_REQUEST['geld_y'])){
 	}
 	
 }
+
+//HTML TEIL
+
+echo "</center>
+
+<form method='Post'>
+	
+<TABLE border='0'>
+  <TR>
+  
+	<TD><input type='image' src='images/reset.jpg' width='75' length='75' name='reset' value='reset'>				 </TD>
+	<TD>   </TD>
+	<TD><input type='image' src='images/flasche.png' 		name='flasche'>	<br> </TD>
+    <TD><input type='image' src='images/oma.png'	 		name='oma'>		<br> </TD>
+    <TD><input type='image' src='images/fabrik.png'  		name='fabrik'>	<br> </TD>
+	<TD><input type='image' src='images/bank.png'  	 		name='bank'>	<br> </TD>
+	<TD><input type='image' src='images/drucker.png' 		name='drucker'>	<br> </TD>
+	<TD><input type='image' src='images/zeitmaschine.png' 	name='zeitmaschine'>	<br> </TD>
+  </TR>
+  <TR>
+	<TD>  $leer $leer $leer $leer $leer $leer $leer $leer $leer </TD>
+	<TD>        </TD>
+    <TD>".$flaschenanzahl.		" Flaschen  $leer $leer(+".$flaschenpc.")$leer $leer  </TD>
+	<TD>".$omaanzahl.			" Omas 	    $leer $leer(+".$omapc.")$leer $leer </TD>
+	<TD>".$fabrikanzahl. 		" Fabriken	$leer $leer(+".$fabrikpc.")$leer $leer </TD>
+	<TD>".$bankanzahl.    		" Banken 	$leer $leer(+".$bankpc.")$leer $leer</TD>
+	<TD>".$druckeranzahl. 		" Drucker 	$leer $leer(+".$druckerpc.")$leer $leer</TD>
+	<TD>".$zeitmaschinenanzahl. " Zeitmaschinen $leer $leer(+".$zeitmaschinenpc.")$leer $leer</TD>
+  </TR>
+   <TR>
+	
+	<TD>$leer $leer $leer $leer $leer $leer $leer $leer $leer $leer<b>Preis pro Einheit: </b></TD>
+	<TD>$leer $leer $leer $leer $leer $leer $leer $leer $leer</TD>
+    <TD>".number_format(round($flaschenpreis,2),2,'.',',')." $euro </TD>
+	<TD>".number_format(round($omapreis,2),2,'.',',')." $euro</TD>
+    <TD>".number_format(round($fabrikpreis,2),2,'.',',')." $euro </TD>
+    <TD>".number_format(round($bankpreis,2),2,'.',',')." $euro</TD>
+    <TD>".number_format(round($druckerpreis,2),2,'.',',')." $euro </TD>
+    <TD>".number_format(round($zeitmaschinenpreis,2),2,'.',',')." $euro </TD>
+  </TR>
+
+</TABLE>
+	
+</form>";
+
+
+
+
 
 //FLASCHE KAUFEN
 if (isset($_REQUEST['flasche_y'])){
@@ -252,18 +301,20 @@ if (isset($_REQUEST['zeitmaschine_y'])){
 }
 }
 
-//RESET
+
+	
+//RESET BUTTON
 if (isset($_REQUEST['reset_y'])){
 $reset_y=$_REQUEST['reset_y'];
 
 if ($reset_y>0){
 	setcookie("geldmenge", 0, time()+3600);
 	setcookie("flaschenanzahl", 0, time()+3600);
-	setcookie("flaschenpreis", 5, time()+3600);
+	setcookie("flaschenpreis", 2, time()+3600);
 	setcookie("omaanzahl", 0, time()+3600);
-	setcookie("omapreis", 500, time()+3600);
+	setcookie("omapreis", 250, time()+3600);
 	setcookie("fabrikanzahl", 0, time()+3600);
-	setcookie("fabrikpreis", 5000, time()+3600);
+	setcookie("fabrikpreis", 1000, time()+3600);
 	setcookie("bankanzahl", 0, time()+3600);
 	setcookie("bankpreis",12500 , time()+3600);
 	setcookie("druckeranzahl", 0, time()+3600);
@@ -274,58 +325,66 @@ if ($reset_y>0){
 	echo "<meta http-equiv='refresh' content='0; URL=geld.php'>";
 }
 }
-//HTML
 
-echo "
 
-<form method='Post'>
-	
-<TABLE border='0'>
-  <TR>
-	<TD><input type='image' src='images/reset.jpg' width='75' length='75' name='reset' value='reset'>				 </TD>
-	
-	<TD><input type='image' src='images/flasche.png' 		name='flasche'>	<br> </TD>
-    <TD><input type='image' src='images/oma.png'	 		name='oma'>		<br> </TD>
-    <TD><input type='image' src='images/fabrik.png'  		name='fabrik'>	<br> </TD>
-	<TD><input type='image' src='images/bank.png'  	 		name='bank'>	<br> </TD>
-	<TD><input type='image' src='images/drucker.png' 		name='drucker'>	<br> </TD>
-	<TD><input type='image' src='images/zeitmaschine.png' 	name='zeitmaschine'>	<br> </TD>
-  </TR>
-  <TR>
-	<TD></TD>
-    <TD>".$flaschenanzahl.		" Flaschen 		(+".$flaschenpc.")  </TD>
-	<TD>".$omaanzahl.			" Omas 	   		(+".$omapc.")     </TD>
-	<TD>".$fabrikanzahl. 		" Fabriken		(+".$fabrikpc.")  </TD>
-	<TD>".$bankanzahl.    		" Banken 		(+".$bankpc.")  </TD>
-	<TD>".$druckeranzahl. 		" Drucker 		(+".$druckerpc.")  </TD>
-	<TD>".$zeitmaschinenanzahl. " Zeitmaschinen (+".$zeitmaschinenpc.")  </TD>
-  </TR>
-   <TR>
-	<TD><b>Preis pro Einheit: </b></TD>
-    <TD>".number_format(round($flaschenpreis,2),2,'.',',')." $euro </TD>
-	<TD>".number_format(round($omapreis,2),2,'.',',')." $euro</TD>
-    <TD>".number_format(round($fabrikpreis,2),2,'.',',')." $euro </TD>
-    <TD>".number_format(round($bankpreis,2),2,'.',',')." $euro</TD>
-    <TD>".number_format(round($druckerpreis,2),2,'.',',')." $euro </TD>
-    <TD>".number_format(round($zeitmaschinenpreis,2),2,'.',',')." $euro </TD>
-  </TR>
 
-</TABLE>
-	
-</form>";
+
+$geldpc = 0.01+$flaschenpc+$omapc+$fabrikpc+$bankpc+$druckerpc+$zeitmaschinenpc;
 
 //GELDMÜNZE
-echo "<form method='Post'>
-
-	<input type='image' src='images/geld.png' width='200' length='200' name='geld' ><br>
-	</form>";
+echo "<center><form method='Post'>";
+	if($geldpc==0.01){
+	echo"<input type='image' src='images/1c.png'  name='geld' ><br>";
+	}
+		elseif($geldpc<0.02){
+		echo "<input type='image' src='images/1c.png' width='100' length='100' name='geld' ><br>";
+	}
+		elseif($geldpc<0.05){
+		echo "<input type='image' src='images/2c.png'  width='100' length='100' name='geld' ><br>";
+	}
+		elseif($geldpc<0.10){
+		echo "<input type='image' src='images/5c.png'  width='100' length='100' name='geld' ><br>";
+	}
+		elseif($geldpc<0.20){
+		echo "<input type='image' src='images/10c.png'  width='100' length='100' name='geld' ><br>";
+	}
+		elseif($geldpc<0.50){
+		echo "<input type='image' src='images/20c.png' width='100' length='100'  name='geld' ><br>";
+	}
+		elseif($geldpc<1){
+		echo "<input type='image' src='images/50c.png' width='200' length='200' name='geld' ><br>";
+	}
+		elseif($geldpc<2){
+		echo "<input type='image' src='images/geld.png' width='200' length='200' name='geld' ><br>";
+	}
+		elseif($geldpc<5){
+		echo "<input type='image' src='images/2e.png' width='200' length='200' name='geld' ><br>";
+	}	
+		elseif($geldpc<10){
+		echo "<input type='image' src='images/5e.png'  name='geld' ><br>";
+	}
+		elseif($geldpc<20){
+		echo "<input type='image' src='images/10e.png' name='geld' ><br>";
+	}
+		elseif($geldpc<50){
+		echo "<input type='image' src='images/20e.png'  name='geld' ><br>";
+	}
+		elseif($geldpc<100){
+		echo "<input type='image' src='images/50e.png'  name='geld' ><br>";
+	}
+		elseif($geldpc<200){
+		echo "<input type='image' src='images/100e.png'  name='geld' ><br>";
+	}
+		elseif($geldpc<500){
+		echo "<input type='image' src='images/200e.png'  name='geld' ><br>";
+	}
+	else{
+		echo "<input type='image' src='images/500e.png'  name='geld' ><br>";
+	}
+echo"</form></center>";
 
 //Ausgabe	
-	$geldrund=round($geld,2);
-	$geldrundkomma=number_format($geldrund, 2, '.', ',');
-	echo "<b><FONT FACE='Arial Black'>".$geldrundkomma." $euro (".number_format($geldpc,2,'.',',')." $euro pro Klick)</FÒNT></b><br><br></center>"; 
-	
-
+	echo "<center><b><FONT FACE='Arial Black'>".number_format(round($geld,2),2,'.',',')." $euro (".number_format($geldpc,2,'.',',')." $euro pro Klick)</FÒNT></b><br><br></center>"; 
 	
 ?>
 
