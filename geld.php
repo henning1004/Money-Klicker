@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Leibniz Klicker</title>
+	<title>Money Klicker</title>
 </head>
 <body>
 
@@ -121,7 +121,7 @@ if (isset($_REQUEST['geld_y'])){
 								
 		//addieren
 		$geld = $geld+$geldpc;
-		setcookie("geldmenge", $geld, time()+3600);
+		setcookie("geldmenge", $geld, time()+60*60*24*30);//für 30 Tage
 		
 	}
 	
@@ -180,16 +180,16 @@ if (isset($_REQUEST['flasche_y'])){
 	$flasche_y=$_REQUEST['flasche_y'];
 	if ($flasche_y>0){
 	
-	//flasche adden
+	//FLASCHE adden
 	if($geld>=$flaschenpreis){
 		$geld=$geld-$flaschenpreis;
 		$flaschenanzahl++;
-		setcookie("geldmenge", $geld, time()+3600);
-		setcookie("flaschenanzahl", $flaschenanzahl, time()+3600);
+		setcookie("geldmenge", $geld, time()+60*60*24*30);
+		setcookie("flaschenanzahl", $flaschenanzahl, time()+60*60*24*30);
 		
-		//neuen Flaschen preis berechnen
+		//neuen FLASCHEN preis berechnen
 		$flaschenpreis=$flaschenpreis*1.10;
-		setcookie("flaschenpreis", $flaschenpreis, time()+3600);
+		setcookie("flaschenpreis", $flaschenpreis, time()+60*60*24*30);
 		echo "<meta http-equiv='refresh' content='0; URL=geld.php'>";
 	}
 }
@@ -201,16 +201,16 @@ if (isset($_REQUEST['oma_y'])){
 	$oma_y=$_REQUEST['oma_y'];
 	if ($oma_y>0){
 	
-	//oma adden
+	//OMA adden
 	if($geld>=$omapreis){
 		$geld=$geld-$omapreis;
 		$omaanzahl++;
-		setcookie("geldmenge", $geld, time()+3600);
-		setcookie("omaanzahl", $omaanzahl, time()+3600);
+		setcookie("geldmenge", $geld, time()+60*60*24*30);
+		setcookie("omaanzahl", $omaanzahl, time()+60*60*24*30);
 		
-		//neuen oma preis berechnen
+		//neuen OMA preis berechnen
 		$omapreis=$omapreis*$steigungsfaktor;
-		setcookie("omapreis", $omapreis, time()+3600);
+		setcookie("omapreis", $omapreis, time()+60*60*24*30);
 		echo "<meta http-equiv='refresh' content='0; URL=geld.php'>";
 	}
 }
@@ -222,16 +222,16 @@ if (isset($_REQUEST['fabrik_y'])){
 	$fabrik_y=$_REQUEST['fabrik_y'];
 	if ($fabrik_y>0){
 	
-	//Fabrik adden
+	//FABRIK adden
 	if($geld>=$fabrikpreis){
 		$geld=$geld-$fabrikpreis;
 		$fabrikanzahl++;
-		setcookie("geldmenge", $geld, time()+3600);
-		setcookie("fabrikanzahl", $fabrikanzahl, time()+3600);
+		setcookie("geldmenge", $geld, time()+60*60*24*30);
+		setcookie("fabrikanzahl", $fabrikanzahl, time()+60*60*24*30);
 		
-		//neuen Fabrik preis berechnen
+		//neuen FABRIK preis berechnen
 		$fabrikpreis=$fabrikpreis*$steigungsfaktor;
-		setcookie("fabrikpreis", $fabrikpreis, time()+3600);
+		setcookie("fabrikpreis", $fabrikpreis, time()+60*60*24*30);
 			echo "<meta http-equiv='refresh' content='0; URL=geld.php'>";
 	}
 }
@@ -247,12 +247,12 @@ if (isset($_REQUEST['bank_y'])){
 	if($geld>=$bankpreis){
 		$geld=$geld-$bankpreis;
 		$bankanzahl++;
-		setcookie("geldmenge", $geld, time()+3600);
-		setcookie("bankanzahl", $bankanzahl, time()+3600);
+		setcookie("geldmenge", $geld, time()+60*60*24*30);
+		setcookie("bankanzahl", $bankanzahl, time()+60*60*24*30);
 		
-		//neuen Fabrik preis berechnen
+		//neuen BANK preis berechnen
 		$bankpreis=$bankpreis*$steigungsfaktor;
-		setcookie("bankpreis", $bankpreis, time()+3600);
+		setcookie("bankpreis", $bankpreis, time()+60*60*24*30);
 			echo "<meta http-equiv='refresh' content='0; URL=geld.php'>";
 	}
 }
@@ -264,16 +264,16 @@ if (isset($_REQUEST['drucker_y'])){
 	$drucker_y=$_REQUEST['drucker_y'];
 	if ($drucker_y>0){
 	
-	//drucker adden
+	//DRUCKER adden
 	if($geld>=$druckerpreis){
 		$geld=$geld-$druckerpreis;
 		$druckeranzahl++;
-		setcookie("geldmenge", $geld, time()+3600);
-		setcookie("druckeranzahl", $druckeranzahl, time()+3600);
+		setcookie("geldmenge", $geld, time()+60*60*24*30);
+		setcookie("druckeranzahl", $druckeranzahl,time()+60*60*24*30);
 		
-		//neuen Fabrik preis berechnen
+		//neuen DRUCKER preis berechnen
 		$druckerpreis=$druckerpreis*$steigungsfaktor;
-		setcookie("druckerpreis", $druckerpreis, time()+3600);
+		setcookie("druckerpreis", $druckerpreis, time()+60*60*24*30);
 			echo "<meta http-equiv='refresh' content='0; URL=geld.php'>";
 	}
 }
@@ -285,16 +285,16 @@ if (isset($_REQUEST['zeitmaschine_y'])){
 	$zeitmaschine_y=$_REQUEST['zeitmaschine_y'];
 	if ($zeitmaschine_y>0){
 	
-	//BANK adden
+	//ZEITMASCHINE adden
 	if($geld>=$zeitmaschinenpreis){
 		$geld=$geld-$zeitmaschinenpreis;
 		$zeitmaschinenanzahl++;
-		setcookie("geldmenge", $geld, time()+3600);
-		setcookie("zeitmaschinenanzahl", $zeitmaschinenanzahl, time()+3600);
+		setcookie("geldmenge", $geld, time()+60*60*24*30);
+		setcookie("zeitmaschinenanzahl", $zeitmaschinenanzahl, time()+60*60*24*30);
 		
-		//neuen Fabrik preis berechnen
+		//neuen ZEITMASCHINE preis berechnen
 		$zeitmaschinenpreis=$zeitmaschinenpreis*$steigungsfaktor;
-		setcookie("zeitmaschinenpreis", $zeitmaschinenpreis, time()+3600);
+		setcookie("zeitmaschinenpreis", $zeitmaschinenpreis, time()+60*60*24*30);
 			echo "<meta http-equiv='refresh' content='0; URL=geld.php'>";
 	}
 }
@@ -307,19 +307,19 @@ if (isset($_REQUEST['reset_y'])){
 $reset_y=$_REQUEST['reset_y'];
 
 if ($reset_y>0){
-	setcookie("geldmenge", 0, time()+3600);
-	setcookie("flaschenanzahl", 0, time()+3600);
-	setcookie("flaschenpreis", 2, time()+3600);
-	setcookie("omaanzahl", 0, time()+3600);
-	setcookie("omapreis", 250, time()+3600);
-	setcookie("fabrikanzahl", 0, time()+3600);
-	setcookie("fabrikpreis", 1000, time()+3600);
-	setcookie("bankanzahl", 0, time()+3600);
-	setcookie("bankpreis",12500 , time()+3600);
-	setcookie("druckeranzahl", 0, time()+3600);
-	setcookie("druckerpreis", 25000, time()+3600); 
-	setcookie("zeitmaschinenanzahl", 0, time()+3600);
-	setcookie("zeitmaschinenpreis", 50000, time()+3600); 
+	setcookie("geldmenge", 0, time()+60);//für 60 sek, da wert sowieso resetet
+	setcookie("flaschenanzahl", 0, time()+60);
+	setcookie("flaschenpreis", 2, time()+60);
+	setcookie("omaanzahl", 0, time()+60);
+	setcookie("omapreis", 250, time()+60);
+	setcookie("fabrikanzahl", 0, time()+60);
+	setcookie("fabrikpreis", 1000, time()+60);
+	setcookie("bankanzahl", 0, time()+60);
+	setcookie("bankpreis",12500 , time()+60);
+	setcookie("druckeranzahl", 0, time()+60);
+	setcookie("druckerpreis", 25000, time()+60); 
+	setcookie("zeitmaschinenanzahl", 0, time()+60);
+	setcookie("zeitmaschinenpreis", 50000, time()+60); 
 	//Seite neuladem,damit werte entgültig 0
 	echo "<meta http-equiv='refresh' content='0; URL=geld.php'>";
 }
