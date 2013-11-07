@@ -132,7 +132,7 @@ if (isset($_REQUEST['geld_y'])){
 echo "</center>
 
 <form method='Post'>
-	
+<FONT FACE='Comic Sans MS'>
 <TABLE border='0'>
   <TR>
   
@@ -168,7 +168,7 @@ echo "</center>
 
 </TABLE>
 	
-</form>";
+</form></FONT>";
 
 
 
@@ -383,7 +383,7 @@ echo "<center><form method='Post'>";
 echo"</form></center>";
 
 //Ausgabe	
-	echo "<center><b><FONT FACE='Arial Black'>".number_format(round($geld,2),2,'.',',')." $euro (".number_format($geldpc,2,'.',',')." $euro pro Klick)</FÒNT></b><br><br></center>"; 
+	echo "<center><b><FONT FACE='Comic Sans MS'>".number_format(round($geld,2),2,'.',',')." $euro (".number_format($geldpc,2,'.',',')." $euro pro Klick)</FÒNT></b><br><br></center>"; 
 	
 ?>
 
