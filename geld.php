@@ -148,23 +148,22 @@ echo "</center>
   <TR>
 	<TD>  $leer $leer $leer $leer $leer $leer $leer $leer $leer </TD>
 	<TD>        </TD>
-    <TD>".$flaschenanzahl.		" Flaschen  $leer $leer(+".$flaschenpc.")$leer $leer  </TD>
-	<TD>".$omaanzahl.			" Omas 	    $leer $leer(+".$omapc.")$leer $leer </TD>
-	<TD>".$fabrikanzahl. 		" Fabriken	$leer $leer(+".$fabrikpc.")$leer $leer </TD>
-	<TD>".$bankanzahl.    		" Banken 	$leer $leer(+".$bankpc.")$leer $leer</TD>
-	<TD>".$druckeranzahl. 		" Drucker 	$leer $leer(+".$druckerpc.")$leer $leer</TD>
-	<TD>".$zeitmaschinenanzahl. " Zeitmaschinen $leer $leer(+".$zeitmaschinenpc.")$leer $leer</TD>
+    <TD><center>".$flaschenanzahl.		" Flaschen(+".$flaschenpc.")</center>$leer $leer  </TD>
+	<TD><center>".$omaanzahl.			" Omas(+".$omapc.")			</center>$leer $leer </TD>
+	<TD><center>".$fabrikanzahl. 		" Fabriken(+".$fabrikpc.")	</center>$leer $leer </TD>
+	<TD><center>".$bankanzahl.    		" Banken(+".$bankpc.")		</center>$leer $leer</TD>
+	<TD><center>".$druckeranzahl. 		" Drucker(+".$druckerpc.")	</center>$leer $leer</TD>
+	<TD><center>".$zeitmaschinenanzahl. " Zeitmaschinen(+".$zeitmaschinenpc.")</center>$leer $leer</TD>
   </TR>
    <TR>
-	
-	<TD>$leer $leer $leer $leer $leer $leer $leer $leer $leer $leer<b>Preis pro Einheit: </b></TD>
+	<TD>$leer $leer $leer $leer $leer $leer $leer $leer $leer $leer $leer $leer $leer $leer<b>Preis pro Einheit: </b></TD>
 	<TD>$leer $leer $leer $leer $leer $leer $leer $leer $leer</TD>
-    <TD>".number_format(round($flaschenpreis,2),2,'.',',')." $euro </TD>
-	<TD>".number_format(round($omapreis,2),2,'.',',')." $euro</TD>
-    <TD>".number_format(round($fabrikpreis,2),2,'.',',')." $euro </TD>
-    <TD>".number_format(round($bankpreis,2),2,'.',',')." $euro</TD>
-    <TD>".number_format(round($druckerpreis,2),2,'.',',')." $euro </TD>
-    <TD>".number_format(round($zeitmaschinenpreis,2),2,'.',',')." $euro </TD>
+    <TD><center>".number_format(round($flaschenpreis,2),2,'.',',')." $euro </center></TD>
+	<TD><center>".number_format(round($omapreis,2),2,'.',',')." $euro</center></TD>
+    <TD><center>".number_format(round($fabrikpreis,2),2,'.',',')." $euro</center> </TD>
+    <TD><center>".number_format(round($bankpreis,2),2,'.',',')." $euro</center></TD>
+    <TD><center>".number_format(round($druckerpreis,2),2,'.',',')." $euro </center></TD>
+    <TD><center>".number_format(round($zeitmaschinenpreis,2),2,'.',',')." $euro </center></TD>
   </TR>
 
 </TABLE>
